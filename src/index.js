@@ -1,13 +1,13 @@
 // EXPORTS
-const express = require('express');
-const app = express();
-const PORT = 3000;
+const express = require('express');const app = express();const PORT = 3000;const fs = require('fs');const path = require('path');const { format } = require('date-fns');const logger = require('./logger');const cors = require('cors');const optinsCors = require('./cors');
 
 // MIDDLEWARES
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(logger);
+app.use(cors(optinsCors));
 
-// GROCERYLIST
+// GROCERY LIST
 const groceryList = [
     {
         item: 'milk',
