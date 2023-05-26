@@ -4,6 +4,8 @@ const express = require('express');const app = express();const PORT = 3000;const
 // MIDDLEWARES
 app.use(express.json());
 app.use(express.urlencoded());
+
+// CUSTOM MIDDLEWARES
 app.use(logger);
 app.use(cors(optinsCors));
 
