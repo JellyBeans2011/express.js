@@ -30,6 +30,13 @@ app.get('/groceries', (req, res) => {
     res.send(groceryList);
 });
 
+// FIND GROCERY ITEM
+app.get('/groceries/:item', (req, res) => {
+    const item = req.params.item;
+    const groceryItem = groceryList.find((g) => g.item === item);
+    res.send(groceryItem);
+});
+
 // POST REQUESTS
 app.post('/groceries', (req, res) => {
     console.log(req.body);
