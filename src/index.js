@@ -1,9 +1,10 @@
 // EXPORTS.
-const express = require('express'); const app = express(); const PORT = 3000; const fs = require('fs'); const path = require('path'); const { format } = require('date-fns'); const logger = require('./logger'); const cors = require('cors'); const optinsCors = require('./cors'); const groceriesRouter = require('./routes/groceries'); const marketsRouter = require('./routes/markets');
+const express = require('express'); const app = express(); const PORT = 3000; const fs = require('fs'); const path = require('path'); const { format } = require('date-fns'); const logger = require('./logger'); const cors = require('cors'); const optinsCors = require('./cors'); const groceriesRouter = require('./routes/groceries'); const marketsRouter = require('./routes/markets');const cookieParser = require('cookie-parser');
 
 // MIDDLEWARES.
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(cookieParser());
 
 // CUSTOM MIDDLEWARES: LOGGER AND CORS.
 app.use(logger);

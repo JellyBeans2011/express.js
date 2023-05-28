@@ -19,6 +19,13 @@ const groceryList = [
 
 // GET REQUESTS
 router.get('/', (req, res) => {
+    res.cookie('visited', true, {
+        maxAge: 30000,
+    });
+    const cookies = req.headers.cookie;
+    if (cookies) {
+        console.log(req.cookies);
+    };
     res.send(groceryList);
 });
 
