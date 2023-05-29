@@ -43,4 +43,29 @@ router.post('/', (req, res) => {
     res.send(201);
 });
 
+// CHECKING IF CART EXISTS AND SENDING CART OBJ
+router.get('/shopping/cart', (req, res) => {
+    const { cart } = req.session;
+    if (!cart) {
+        res.send('You have no cart session')
+    } else {
+        res.send(cart);
+    };
+});
+
+// CREATING CART W/ EXPRESS SESSION OR JUST ADDING CART|ITEM INTO OBJ
+router.post('/shopping/cart/item', (req, res) => {
+    const { item, quantity } = req.body;
+    const cartItem = { item, quantity };
+    const { cart } = req.session;
+    if (cart) {
+        req.session.cart.items.push(cartItem);
+    } else {
+        req.session.cart = {
+            items: [cartItem],
+        };
+    }
+    res.send(201);
+});
+
 module.exports = router;
