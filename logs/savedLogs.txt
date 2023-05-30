@@ -299,3 +299,6 @@
 2023/05/30	21:45:40	GET	undefined	/api/auth/login
 2023/05/30	21:45:40	GET	undefined	/api/auth/login
 2023/05/30	21:45:47	POST	undefined	/api/auth/login
+2023/05/30	22:41:39	GET	undefined	/api/groceries
+2023/05/30	22:41:40	GET	undefined	/api/groceries
+2023/05/30	22:41:40	GET	undefined	/api/groceries
