@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+router.use((req, res, next) => {
+    if (req.session.user) next();
+    else res.send(401);
+});
+
 // LIST OF SUPERMARKETS
 const supermarkets = [
     {

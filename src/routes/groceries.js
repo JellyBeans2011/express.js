@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+router.use((req, res, next) => {
+    if (req.session.user) next();
+    else res.send(401);
+});
+
 // GROCERY LIST
 const groceryList = [
     {
@@ -19,13 +24,6 @@ const groceryList = [
 
 // GET REQUESTS
 router.get('/', (req, res) => {
-    res.cookie('visited', true, {
-        maxAge: 30000,
-    });
-    const cookies = req.headers.cookie;
-    if (cookies) {
-        console.log(req.cookies);
-    };
     res.send(groceryList);
 });
 
@@ -47,7 +45,7 @@ router.post('/', (req, res) => {
 router.get('/shopping/cart', (req, res) => {
     const { cart } = req.session;
     if (!cart) {
-        res.send('You have no cart session')
+        res.send('You have no cart items!')
     } else {
         res.send(cart);
     };
