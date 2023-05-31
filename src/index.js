@@ -10,6 +10,7 @@ const marketsRouter = require('./routes/markets');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const authRouter = require('./routes/auth');
+require('./database/mongoosedb');
 
 // MIDDLEWARES.
 app.use(express.json());

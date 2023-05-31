@@ -302,3 +302,8 @@
 2023/05/30	22:41:39	GET	undefined	/api/groceries
 2023/05/30	22:41:40	GET	undefined	/api/groceries
 2023/05/30	22:41:40	GET	undefined	/api/groceries
+2023/05/31	11:22:00	POST	undefined	/api/auth/register
+2023/05/31	11:25:22	POST	undefined	/api/auth/register
+2023/05/31	11:25:25	POST	undefined	/api/auth/register
+2023/05/31	11:25:49	POST	undefined	/api/auth/register
+2023/05/31	11:27:33	POST	undefined	/api/auth/register
